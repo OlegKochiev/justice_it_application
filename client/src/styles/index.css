@@ -17,6 +17,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+.chart {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
 .chart-container {
   width: 600px;
   display: flex;
@@ -31,5 +37,5 @@ code {
   gap: 10px;
   padding: 10px;
   border: 1px solid black;
-  border-radius: 8px;
+  border-radius: 10px;
 }

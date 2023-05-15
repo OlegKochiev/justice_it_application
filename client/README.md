@@ -68,3 +68,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Обоснование использования библиотек:
+1 - Chart.js - Среди множества библиотек построения графиков для разработчиков приложений на JavaScript, Chart.js в настоящее время является самым популярным по версии GitHub stars (~60 000 загрузок) и npm (~2 400 000 в неделю).
+Chart.js был создан и анонсирован в 2013 году, но с тех пор прошел долгий путь. Это программа с открытым исходным кодом, лицензированная по очень разрешительной лицензии MIT, и поддерживается активным сообществом.
+2 -
