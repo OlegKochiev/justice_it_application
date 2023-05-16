@@ -1,6 +1,28 @@
 import {useContext} from 'react';
 import {GlobalContext} from '../context/GlobalContext';
 
+const getFactoriesAndProductsLists = (data) => {
+  const factoriesList = {};
+  const productsList = {};
+  if (data.length > 0) {
+    for (let i = 0; i < data.length; i++) {
+      const item = data[i];
+      const factoryId = item.factory_id;
+      if (!factoriesList[factoryId]) factoriesList[factoryId] = {factoryId: factoryId, title: `Фабрика ${factoryId}`};
+      for (let key in item) {
+        if (key.includes('product') && !productsList[key]) {
+          const productId = key.replace(/[^+\d]/g, '');
+          productsList[key] = {
+            productId: key,
+            title: `Продукт ${productId}`,
+          };
+        }
+      }
+    }
+  }
+  return {factoriesList: Object.values(factoriesList), productsList: Object.values(productsList)};
+};
+
 const useProducts = (filter = 'all') => {
   const data = useContext(GlobalContext);
   const monthly = [];
@@ -13,7 +35,6 @@ const useProducts = (filter = 'all') => {
       const dateFormatted = item.date.split('/').reverse().join('/');
       const month = new Date(dateFormatted).getMonth();
       const factoryId = item.factory_id;
-      if (!factorys[factoryId]) factorys[factoryId] = [];
       if (!monthly[month]) monthly[month] = {};
       if (!monthly[month][factoryId]) monthly[month][factoryId] = [];
       monthly[month][factoryId].push(item);
@@ -53,6 +74,8 @@ const useProducts = (filter = 'all') => {
     }
   }
   products = Object.values(products);
+  const {factoriesList, productsList} = getFactoriesAndProductsLists(data);
+  console.log(factoriesList, productsList);
   return {products, factorys};
 };
 
