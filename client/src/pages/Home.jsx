@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import ChartContainer from '../components/VerticalChart/ChartContainer';
+import {GlobalContext} from '../context/GlobalContext';
 
 export default function Home() {
-  return <ChartContainer />;
+  const data = useContext(GlobalContext);
+  return data.length ? <ChartContainer /> : 'Идет загрузка данных..';
 }

@@ -1,14 +1,8 @@
-import React, {useEffect, useState} from 'react';
-import {useParams} from 'react-router-dom';
-import {URL} from '../constants';
+import React, {useContext} from 'react';
 import Chart from '../components/PieChart/Chart';
+import {GlobalContext} from '../context/GlobalContext';
 
 export default function Details() {
-  const {factoryId, mounthNumber} = useParams();
-
-  return (
-    <div>
-      <Chart />
-    </div>
-  );
+  const data = useContext(GlobalContext);
+  return data.length ? <Chart /> : 'Идет загрузка данных...';
 }
