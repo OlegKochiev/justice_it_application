@@ -39,5 +39,5 @@ export default function Home() {
     }
   }, [data]);
 
-  return isLoading ? 'Загрузка данных..' : <ChartContainer data={data} />;
+  return isLoading ? 'Идет загрузка данных...' : <ChartContainer data={data} />;
 }
