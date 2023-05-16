@@ -40,7 +40,7 @@ export default function Chart() {
     if (getElementAtEvent(chartRef.current, event).length > 0) {
       const bar = getElementAtEvent(chartRef.current, event)[0];
       const monthNumber = bar.index;
-      const factoryId = bar.datasetIndex;
+      const factoryId = bar.datasetIndex + 1;
       navigate(`/details/${factoryId}/${monthNumber}`);
     }
   };

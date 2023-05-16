@@ -9,6 +9,7 @@ import './styles/index.css';
 import {PATHS} from './constants';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -16,8 +17,8 @@ root.render(
         <Route path={PATHS.HOME} element={<Layout />}>
           <Route index element={<Home />} />
           <Route path={PATHS.DETAILS} element={<Details />} />
+          <Route path="*" element={<Page404 />} />
         </Route>
-        <Route path="*" element={<Page404 />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

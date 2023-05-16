@@ -1,8 +1,11 @@
 import React from 'react';
-import {PRODUCT_FILTER_OPTIONS} from '../../constants';
+import useProducts from '../../hooks/useProducts';
+
 import '../../styles/index.css';
 
-export default function ChartFilter({setProductFilter}) {
+export default function ChartFilter({productFilter, setProductFilter}) {
+  const {products} = useProducts();
+
   const handleChange = (e) => {
     setProductFilter(e.target.value);
   };
@@ -11,9 +14,12 @@ export default function ChartFilter({setProductFilter}) {
     <label className="chart-filter__label">
       Фильтр по типу продукции:
       <select name="Фильтр" onChange={handleChange}>
-        {PRODUCT_FILTER_OPTIONS.map((filter) => (
-          <option key={filter.name} value={filter.value} label={filter.name}>
-            {filter.name}
+        <option key="all" value="all" label="Все">
+          Все
+        </option>
+        {products.map((product) => (
+          <option key={product.id} value={product.id} label={product.title}>
+            {product.title}
           </option>
         ))}
       </select>
