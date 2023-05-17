@@ -26,7 +26,7 @@ const PATHS = {
   DETAILS: '/details/:factoryId/:mounthNumber',
 };
 
-const CHART_LABELS = [
+const MONTHS = [
   'Январь',
   'Февраль',
   'Март',
@@ -41,4 +41,4 @@ const CHART_LABELS = [
   'Декабрь',
 ];
 
-export {URL, PRODUCT_FILTER_OPTIONS, CHART_LABELS, PATHS};
+export {URL, PRODUCT_FILTER_OPTIONS, MONTHS, PATHS};

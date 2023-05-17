@@ -1,10 +1,10 @@
-import React from 'react';
-import useProducts from '../../hooks/useProducts';
+import React, {useContext} from 'react';
+import {GlobalContext} from '../../context/GlobalContext';
 
 import '../../styles/index.css';
 
 export default function ChartFilter({productFilter, setProductFilter}) {
-  const {products} = useProducts();
+  const {productsList} = useContext(GlobalContext);
 
   const handleChange = (e) => {
     setProductFilter(e.target.value);
@@ -14,10 +14,10 @@ export default function ChartFilter({productFilter, setProductFilter}) {
     <label className="chart-filter__label">
       Фильтр по типу продукции:
       <select name="Фильтр" onChange={handleChange}>
-        <option key="all" value="all" label="Все">
+        <option key="all" value="" label="Все">
           Все
         </option>
-        {products.map((product) => (
+        {productsList.map((product) => (
           <option key={product.id} value={product.id} label={product.title}>
             {product.title}
           </option>

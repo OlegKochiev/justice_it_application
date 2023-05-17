@@ -1,3 +1,7 @@
 import {createContext} from 'react';
-const data = [];
-export const GlobalContext = createContext({data});
+const initialState = {
+  factoriesList: [],
+  productsList: [],
+  factoriesProduction: {},
+};
+export const GlobalContext = createContext(initialState);

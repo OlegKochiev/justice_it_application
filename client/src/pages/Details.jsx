@@ -3,6 +3,6 @@ import Chart from '../components/PieChart/Chart';
 import {GlobalContext} from '../context/GlobalContext';
 
 export default function Details() {
-  const data = useContext(GlobalContext);
-  return data.length ? <Chart /> : 'Идет загрузка данных...';
+  const {factoriesList} = useContext(GlobalContext);
+  return factoriesList?.length ? <Chart /> : 'Идет загрузка данных...';
 }

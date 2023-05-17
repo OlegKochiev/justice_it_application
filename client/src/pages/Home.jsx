@@ -3,6 +3,6 @@ import ChartContainer from '../components/VerticalChart/ChartContainer';
 import {GlobalContext} from '../context/GlobalContext';
 
 export default function Home() {
-  const data = useContext(GlobalContext);
-  return data.length ? <ChartContainer /> : 'Идет загрузка данных..';
+  const {factoriesList} = useContext(GlobalContext);
+  return factoriesList?.length ? <ChartContainer /> : 'Идет загрузка данных..';
 }
