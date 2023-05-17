@@ -56,8 +56,8 @@ export default function Chart() {
     datasets: [
       {
         data: [...productsList.map((product) => factoryProductionForMonth[product.id])],
-        backgroundColor: [...BACKGROUND_RGB.splice(0, productsList.length)],
-        borderColor: [...BORDER_RGB.slice(0, productsList.length)],
+        backgroundColor: [...productsList.map((product) => product.backgroundColor)],
+        borderColor: [...productsList.map((product) => product.borderColor)],
         borderWidth: 1,
       },
     ],

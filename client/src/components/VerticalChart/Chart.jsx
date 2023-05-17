@@ -7,18 +7,6 @@ import {GlobalContext} from '../../context/GlobalContext';
 import {MONTHS} from '../../constants';
 import '../../styles/index.css';
 
-const BACKGROUND_RGB = [
-  'rgba(248, 28, 35, 0.7)',
-  'rgba(33, 55, 247, 0.7)',
-  'rgba(64, 224, 8, 0.7)',
-  'rgba(173, 216, 230, 0.7)',
-  'rgba(169, 169, 169, 0.7)',
-  'rgba(100, 149, 237, 0.7)',
-  'rgba(60, 179, 113, 0.7)',
-  'rgba(70, 130, 180, 0.7)',
-  'rgba(25, 25, 112, 0.7)',
-];
-
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const options = {
@@ -30,20 +18,25 @@ const options = {
   },
 };
 
-export default function Chart({productFilter}) {
+const getDatasets = ({factoriesList, factoriesProductionFiltered}) => {
   const datasets = [];
+  for (let key in factoriesProductionFiltered) {
+    const dataset = {};
+    const factory = factoriesList.find((factory) => factory.id === +key);
+    dataset.label = factory?.title;
+    dataset.data = [...factoriesProductionFiltered[key]];
+    dataset.backgroundColor = factory.backgroundColor;
+    datasets.push(dataset);
+  }
+  return datasets;
+};
+
+export default function Chart({productFilter}) {
+  const {factoriesList} = useContext(GlobalContext);
   const {factoriesProductionFiltered} = useProducts({productFilter});
   const chartRef = useRef(null);
   const navigate = useNavigate();
-  const {factoriesList} = useContext(GlobalContext);
-  for (let key in factoriesProductionFiltered) {
-    const datasetItem = {};
-    const factory = factoriesList.find((factory) => factory.id === +key);
-    datasetItem.label = factory?.title;
-    datasetItem.data = [...factoriesProductionFiltered[key]];
-    datasetItem.backgroundColor = BACKGROUND_RGB[datasets.length];
-    datasets.push(datasetItem);
-  }
+  const datasets = getDatasets({factoriesList, factoriesProductionFiltered});
 
   const handleChartClick = (event) => {
     if (getElementAtEvent(chartRef.current, event).length > 0) {
