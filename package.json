@@ -12,7 +12,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "dockerize": "docker build . -t justice_test_app",
+    "start-container": "docker run -p 3000:3000 -d justice_test_app"
   },
   "eslintConfig": {
     "extends": [
