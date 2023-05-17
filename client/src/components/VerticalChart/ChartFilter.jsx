@@ -11,9 +11,9 @@ export default function ChartFilter({productFilter, setProductFilter}) {
   };
 
   return (
-    <label className="chart-filter__label" defaultValue={productFilter}>
+    <label className="chart-filter__label">
       Фильтр по типу продукции:
-      <select name="Фильтр" onChange={handleChange}>
+      <select name="Фильтр" onChange={handleChange} value={productFilter}>
         <option key="all" value="" label="Все">
           Все
         </option>
