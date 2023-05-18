@@ -29,47 +29,14 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `npm run dockerize`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+create docker image
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `npm run start-container`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+start docker container
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-Обоснование использования библиотек:
-1 - Chart.js - Среди множества библиотек построения графиков для разработчиков приложений на JavaScript, Chart.js в настоящее время является самым популярным по версии GitHub stars (~60 000 загрузок) и npm (~2 400 000 в неделю).
-Chart.js был создан и анонсирован в 2013 году, но с тех пор прошел долгий путь. Это программа с открытым исходным кодом, лицензированная по очень разрешительной лицензии MIT, и поддерживается активным сообществом.
-2 -
+Justification of the use of libraries:
+1 - Chart.js - Among the many charting libraries for JavaScript application developers, Chart.js is currently the most popular according to GitHub stars (~60,000 downloads) and npm (~2,400,000 per week).
+Chart.js was created and announced in 2013, but has come a long way since then. It is an open source program licensed under a very permissive MIT license, and is supported by an active community.
