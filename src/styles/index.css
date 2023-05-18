@@ -31,7 +31,7 @@ code {
   gap: 15px;
 }
 
-.chart-filter__label {
+.chart-filter__container {
   display: flex;
   justify-content: flex-end;
   gap: 10px;

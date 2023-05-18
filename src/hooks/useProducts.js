@@ -1,7 +1,7 @@
 import {useContext} from 'react';
 import {GlobalContext} from '../context/GlobalContext';
 
-const useProducts = ({factoryId = 0, monthNumber = 0, productFilter}) => {
+const useProducts = ({factoryId, monthNumber, productFilter}) => {
   const {factoriesList, factoriesProduction} = useContext(GlobalContext);
   const factoryProduction = factoriesProduction[factoryId] || [];
   const factoryProductionForMonth = factoryProduction[monthNumber] || [];

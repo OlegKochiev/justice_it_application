@@ -9,9 +9,10 @@ import {MONTHS} from '../../constants';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export default function Chart() {
-  const {factoryId, mounthNumber} = useParams();
-  const {productsList} = useContext(GlobalContext);
-  const {factoryProductionForMonth} = useProducts({factoryId, mounthNumber});
+  const {factoriesList, productsList} = useContext(GlobalContext);
+  const {factoryId, monthNumber} = useParams();
+  const {factoryProductionForMonth} = useProducts({factoryId, monthNumber});
+  const isValidUrlParams = MONTHS[monthNumber] && factoriesList.find((factory) => factory.id === +factoryId);
   const data = {
     labels: [...productsList.map((product) => product.title)],
     datasets: [
@@ -31,7 +32,7 @@ export default function Chart() {
       },
       title: {
         display: true,
-        text: `Статистика по продукции фабрики ${factoryId} за ${MONTHS[mounthNumber].toLowerCase()}`,
+        text: `Статистика по продукции фабрики ${factoryId} за ${MONTHS[monthNumber]?.toLowerCase()}`,
       },
       labels: {
         render: 'value',
@@ -40,9 +41,5 @@ export default function Chart() {
     },
   };
 
-  return (
-    <div>
-      <Pie data={data} options={options} />
-    </div>
-  );
+  return <div> {isValidUrlParams ? <Pie data={data} options={options} /> : 'Ошибка переданных параметров'}</div>;
 }

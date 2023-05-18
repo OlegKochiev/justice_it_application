@@ -11,18 +11,18 @@ export default function ChartFilter({productFilter, setProductFilter}) {
   };
 
   return (
-    <label className="chart-filter__label">
-      Фильтр по типу продукции:
-      <select name="Фильтр" onChange={handleChange} value={productFilter}>
-        <option key="all" value="" label="Все">
+    <div className="chart-filter__container">
+      <label>Фильтр по типу продукции:</label>
+      <select onChange={handleChange} value={productFilter}>
+        <option key="all" value="">
           Все
         </option>
         {productsList.map((product) => (
-          <option key={product.id} value={product.id} label={product.title}>
+          <option key={product.id} value={product.id}>
             {product.title}
           </option>
         ))}
       </select>
-    </label>
+    </div>
   );
 }
