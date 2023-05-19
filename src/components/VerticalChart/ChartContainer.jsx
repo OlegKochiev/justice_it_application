@@ -4,7 +4,7 @@ import ChartFilter from './ChartFilter';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import '../../styles/index.css';
 
-export default function ChartContainer({data}) {
+export default function ChartContainer() {
   const [productFilter, setProductFilter] = useLocalStorage('productFilter', '');
   return (
     <div className="chart-container">
