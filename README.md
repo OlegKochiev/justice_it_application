@@ -1,42 +1,40 @@
-# Getting Started with Create React App
+# Тестовое задание для компании Justice-It
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Краткое описание:
 
-## Available Scripts
+    Задача - разработать SPA приложение на React для демонстрации графиков по данным загруженным через API.
 
-In the project directory, you can run:
+## Используемые технологии:
 
-### `npm start`
+- react
+- react-dom
+- react-router-dom
+- chart.js
+- react-chartjs-2
+- react-scripts
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Для запуска backend:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Распаковать в любом месте архив api.7z
+2. Перейти в папку api
+3. Установить все зависимости с помощью команды `npm install`
+4. Запустить сервер с помощью команды `npm start`
+5. Откройте браузер по адресу [http://localhost:3001](http://localhost:3001)
 
-### `npm test`
+## Для запуска frontend:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Перейти в папку с проектом
+2. Установить все зависимости с помощью команды `npm install`
+3. Запустить проект с помощью команды `npm start`
+4. Откройте браузер по адресу [http://localhost:3000](http://localhost:3000)
 
-### `npm run build`
+## Дополнительные возможности:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Собрать build приложения для production - команда npm run build
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2. Запустить клиентское приложение в контейнере:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run dockerize`
-
-create docker image
-
-### `npm run start-container`
-
-start docker container
-
-Justification of the use of libraries:
-1 - Chart.js - Among the many charting libraries for JavaScript application developers, Chart.js is currently the most popular according to GitHub stars (~60,000 downloads) and npm (~2,400,000 per week).
-Chart.js was created and announced in 2013, but has come a long way since then. It is an open source program licensed under a very permissive MIT license, and is supported by an active community.
+1.  Перейти в папку с проектом
+2.  Выполнить команду `npm run dockerize` для сбора образа docker
+3.  Выполнить команду `npm run start-container`
+4.  Откройте браузер по адресу [http://localhost:3000](http://localhost:3000)
